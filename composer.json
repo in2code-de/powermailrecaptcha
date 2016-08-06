@@ -1,7 +1,7 @@
 {
   "name": "in2code/powermailrecaptcha",
   "description": "Google recaptcha extension for powermail",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": ["typo3", "powermail", "captcha", "recaptcha"],
   "homepage": "https://github.com/einpraegsam/powermailrecaptcha",
   "authors": [
