@@ -1,6 +1,7 @@
 <?php
 namespace In2code\Powermailrecaptcha\Domain\Validator\SpamShield;
 
+use In2code\Powermail\Domain\Model\Field;
 use In2code\Powermail\Domain\Validator\SpamShield\AbstractMethod;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -23,10 +24,12 @@ class RecaptchaMethod extends AbstractMethod
      */
     public function initialize()
     {
-        if (empty($this->configuration['secretkey']) || $this->configuration['secretkey'] === 'abcdef') {
-            throw new \Exception('No secretkey given. Please add a secret key to TypoScript Constants');
+        if ($this->formHasRecaptcha()) {
+            if (empty($this->configuration['secretkey']) || $this->configuration['secretkey'] === 'abcdef') {
+                throw new \Exception('No secretkey given. Please add a secret key to TypoScript Constants');
+            }
+            $this->secretKey = $this->configuration['secretkey'];
         }
-        $this->secretKey = $this->configuration['secretkey'];
     }
 
     /**
@@ -34,12 +37,33 @@ class RecaptchaMethod extends AbstractMethod
      */
     public function spamCheck()
     {
+        if (!$this->formHasRecaptcha()) {
+            return false;
+        }
         if ($this->getCaptchaResponse()) {
             $jsonResult = GeneralUtility::getUrl($this->getSiteVerifyUri());
             $result = json_decode($jsonResult);
             return !$result->success;
         }
         return true;
+    }
+
+    /**
+     * Check if current form has a recaptcha field
+     *
+     * @return bool
+     */
+    protected function formHasRecaptcha()
+    {
+        foreach ($this->mail->getForm()->getPages() as $page) {
+            /** @var Field $field */
+            foreach ($page->getFields() as $field) {
+                if ($field->getType() === 'recaptcha') {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     /**
