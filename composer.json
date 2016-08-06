@@ -1,0 +1,23 @@
+{
+  "name": "in2code/powermailrecaptcha",
+  "description": "Google recaptcha extension for powermail",
+  "version": "1.0.0",
+  "keywords": ["typo3", "powermail", "captcha", "recaptcha"],
+  "homepage": "https://github.com/einpraegsam/powermailrecaptcha",
+  "authors": [
+    {
+      "name": "Alex Kellner",
+      "email": "alexander.kellner@in2code.de"
+    }
+  ],
+  "type": "typo3-cms-extension",
+  "license": "GPL-3.0",
+  "require": {
+    "typo3/cms": ">=7.6.0 <9.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "In2code\\Powermailrecaptcha\\": "Classes"
+    }
+  }
+}
