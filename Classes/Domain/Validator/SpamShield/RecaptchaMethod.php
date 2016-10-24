@@ -37,7 +37,7 @@ class RecaptchaMethod extends AbstractMethod
      */
     public function spamCheck()
     {
-        if (!$this->formHasRecaptcha()) {
+        if (!$this->formHasRecaptcha() || $this->skipCaptchaCheck()) {
             return false;
         }
         if ($this->getCaptchaResponse()) {
@@ -85,5 +85,30 @@ class RecaptchaMethod extends AbstractMethod
             return $response;
         }
         return false;
+    }
+
+    /**
+     * Captcha check should be skipped on createAction if there was a confirmationAction where the captcha was
+     * already checked before
+     * Note: $this->flexForm is only available in powermail 3.9 or newer
+     *
+     * @return bool
+     */
+    protected function skipCaptchaCheck()
+    {
+        if (property_exists($this, 'flexForm')) {
+            $confirmationActive = $this->flexForm['settings']['flexform']['main']['confirmation'] === '1';
+            return $this->getActionName() === 'create' && $confirmationActive;
+        }
+        return false;
+    }
+
+    /**
+     * @return string "confirmation" or "create"
+     */
+    protected function getActionName()
+    {
+        $pluginVariables = GeneralUtility::_GPmerged('tx_powermail_pi1');
+        return $pluginVariables['action'];
     }
 }

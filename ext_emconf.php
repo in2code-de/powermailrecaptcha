@@ -38,7 +38,7 @@ $EM_CONF[$_EXTKEY] = [
             'extbase' => '7.6.0-8.99.99',
             'fluid' => '7.6.0-8.99.99',
             'php' => '5.5.0-0.0.0',
-            'powermail' => '3.0.0-3.99.99',
+            'powermail' => '3.9.0-3.99.99',
         ],
         'conflicts' => [],
         'suggests' => [],
