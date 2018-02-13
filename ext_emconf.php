@@ -11,7 +11,7 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'powermailrecpatcha',
+    'title' => 'powermailrecaptcha',
     'description' => 'Google recaptcha extension for powermail',
     'category' => 'plugin',
     'shy' => 0,
