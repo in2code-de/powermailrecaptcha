@@ -15,7 +15,7 @@ $EM_CONF[$_EXTKEY] = [
     'description' => 'Google recaptcha extension for powermail',
     'category' => 'plugin',
     'shy' => 0,
-    'version' => '1.1.1',
+    'version' => '1.1.2',
     'dependencies' => 'cms,extbase,fluid',
     'conflicts' => '',
     'priority' => '',
@@ -36,7 +36,7 @@ $EM_CONF[$_EXTKEY] = [
         'depends' => [
             'typo3' => '7.6.0-8.99.99',
             'php' => '5.5.0-0.0.0',
-            'powermail' => '3.9.0-4.99.99',
+            'powermail' => '5.0.0-5.99.99',
         ],
         'conflicts' => [],
         'suggests' => [],
