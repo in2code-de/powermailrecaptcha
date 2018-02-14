@@ -7,9 +7,9 @@
 
 ## Dependencies
 
-* powermail >= 3.9 and < 5.0
-* TYPO3 >= 7.6 and < 9.0
-* php >= 5.5
+* powermail >= 5.0 and < 6.0
+* TYPO3 >= 8.7 and < 10.0
+* php >= 7.0
 
 
 ## Installation
@@ -51,6 +51,7 @@ plugin.tx_powermail.settings.setup.spamshield.logfileLocation = typo3temp/logs/p
 
 | Version    | Date       | Description                                                                                                  |
 | ---------- |:----------:| ------------------------------------------------------------------------------------------------------------:|
+| 2.0.0      | 2018-02-14 | Update dependencies for powermail 5.x                                                                        |
 | 1.1.0      | 2017-11-04 | Update dependencies for powermail 4.x                                                                        |
 | 1.0.1      | 2016-08-06 | Activate check only if form has a recaptcha field and not every time, some more stuff in the manual          |
 | 1.0.0      | 2016-08-06 | Initial upload - have fun                                                                                    |
