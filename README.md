@@ -40,7 +40,7 @@ Keep up to date if powermail recognize spam (TypoScript setup):
 
 ```
 # Get an email if spam was recognized
-plugin.tx_powermail.settings.setup.spamshield.email = alex@in2code.de
+plugin.tx_powermail.settings.setup.spamshield.email = spamreceiver@yourdomain.de
 
 # Write to a logfile when spam was recognized
 plugin.tx_powermail.settings.setup.spamshield.logfileLocation = typo3temp/logs/powermailSpam.log
