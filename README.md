@@ -51,6 +51,7 @@ plugin.tx_powermail.settings.setup.spamshield.logfileLocation = typo3temp/logs/p
 
 | Version    | Date       | Description                                                                                                  |
 | ---------- |:----------:| ------------------------------------------------------------------------------------------------------------:|
+| 4.0.0      | 2018-11-21 | Update dependencies for powermail 7.x                                                                        |
 | 3.0.0      | 2018-07-13 | Update dependencies for powermail 6.x                                                                        |
 | 2.0.0      | 2018-02-14 | Update dependencies for powermail 5.x                                                                        |
 | 1.1.0      | 2017-11-04 | Update dependencies for powermail 4.x                                                                        |
