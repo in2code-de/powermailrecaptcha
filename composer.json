@@ -18,7 +18,7 @@
   "license": "GPL-2.0-or-later",
   "require": {
     "typo3/cms-core": ">=8.7.0 <10.0.0",
-    "in2code/powermail": ">=5.0.0 <7.0.0"
+    "in2code/powermail": ">=5.0.0 <8.0.0"
   },
   "replace": {
     "powermailrecaptcha": "self.version",
