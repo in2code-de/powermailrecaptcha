@@ -18,6 +18,7 @@
 - Clear caches
 - Register your domain to www.google.com/recaptcha/
 - Add sitekey and secretkey to TypoScript Constants (see example below)
+- Ensure that spamshield is enabled (see below)
 - Add a field of Type Google Recaptcha to your powermail form
 - Have fun
 
@@ -28,9 +29,9 @@ plugin.tx_powermailrecaptcha.sitekey = 6LdsBBUTAAAAAKMhI67inzeAvzBh5JdRRxlCwbTz
 plugin.tx_powermailrecaptcha.secretkey = 6LdsBBUTAAAAAKMhaaaainzeAvzBh5JdRRxlCwbyy
 ```
 
-## Notes and best practice
+## Common pitfalls and best practice
 
-Be sure to have spamshield enabled in powermail (TypoScript setup):
+spamshield must be enabled in powermail (TypoScript setup):
 
 ```
 plugin.tx_powermail.settings.setup.spamshield._enable = 1
