@@ -17,11 +17,10 @@
   "type": "typo3-cms-extension",
   "license": "GPL-2.0-or-later",
   "require": {
-    "typo3/cms-core": ">=8.7.0 <10.0.0",
-    "in2code/powermail": ">=5.0.0 <8.0.0"
+    "in2code/powermail": ">=8.0.0 <9.0.0",
+    "ext-json": "*"
   },
   "replace": {
-    "powermailrecaptcha": "self.version",
     "typo3-ter/powermailrecaptcha": "self.version"
   },
   "autoload": {
