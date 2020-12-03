@@ -48,7 +48,8 @@ plugin.tx_powermail.settings.setup.spamshield.logfileLocation = typo3temp/logs/p
 ## Changelog
 
 | Version    | Date       | Description                                                                                                  |
-| ---------- |:----------:| ------------------------------------------------------------------------------------------------------------:|
+| ---------- | ---------- | ------------------------------------------------------------------------------------------------------------ |
+| 5.0.1      | 2020-12-03 | Add TYPO3 dependency to ext_emconf.php to make TER upload happy                                              |
 | 5.0.0      | 2020-12-03 | Update dependencies for powermail 8.x                                                                        |
 | 4.0.0      | 2018-11-21 | Update dependencies for powermail 7.x                                                                        |
 | 3.0.0      | 2018-07-13 | Update dependencies for powermail 6.x                                                                        |
