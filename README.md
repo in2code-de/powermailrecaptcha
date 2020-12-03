@@ -2,20 +2,17 @@
 
 ## Google recaptcha for TYPO3 powermail to prevent spam
 
-<img src="https://box.everhelper.me/attachment/542050/34726531-a4d7-4620-9d70-39b6cb4c519e/262407-Fi3TkpDpR25HHyRV/screen.png" />
+![Example form with a google recaptcha](Documentation/Images/frontend.png "Example form with a google recaptcha")
 
 
 ## Dependencies
 
-* powermail >= 5.0 and < 7.0
-* TYPO3 >= 8.7 and < 10.0
-* php >= 7.0
+* powermail >= 8.0 and < 9.0
 
 
 ## Installation
 
-- Just install this extension via composer `composer require in2code/powermailrecaptcha` (or oldschool)
-- Clear caches
+- Just install this extension via composer `composer require in2code/powermailrecaptcha`
 - Register your domain to www.google.com/recaptcha/
 - Add sitekey and secretkey to TypoScript Constants (see example below)
 - Ensure that spamshield is enabled (see below)
@@ -52,6 +49,7 @@ plugin.tx_powermail.settings.setup.spamshield.logfileLocation = typo3temp/logs/p
 
 | Version    | Date       | Description                                                                                                  |
 | ---------- |:----------:| ------------------------------------------------------------------------------------------------------------:|
+| 5.0.0      | 2020-12-03 | Update dependencies for powermail 8.x                                                                        |
 | 4.0.0      | 2018-11-21 | Update dependencies for powermail 7.x                                                                        |
 | 3.0.0      | 2018-07-13 | Update dependencies for powermail 6.x                                                                        |
 | 2.0.0      | 2018-02-14 | Update dependencies for powermail 5.x                                                                        |
