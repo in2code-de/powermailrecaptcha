@@ -29,5 +29,10 @@
     "psr-4": {
       "In2code\\Powermailrecaptcha\\": "Classes"
     }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "powermailrecaptcha"
+    }
   }
 }
