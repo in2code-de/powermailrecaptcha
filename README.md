@@ -7,7 +7,7 @@
 
 ## Dependencies
 
-* powermail >= 8.0 and < 9.0
+* powermail >= 8.0
 
 
 ## Installation
