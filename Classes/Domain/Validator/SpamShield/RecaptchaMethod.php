@@ -1,5 +1,7 @@
 <?php
+
 declare(strict_types=1);
+
 namespace In2code\Powermailrecaptcha\Domain\Validator\SpamShield;
 
 use In2code\Powermail\Domain\Model\Field;
@@ -20,7 +22,17 @@ class RecaptchaMethod extends AbstractMethod
     protected $secretKey = '';
 
     /**
-     * Check if secret key is given and set it
+     * @var string
+     */
+    protected $verificationUri = '';
+
+    /**
+     * @var string
+     */
+    protected $verificationResponseName = '';
+
+    /**
+     * Check if secret key is given and set configuration
      *
      * @return void
      * @throws \Exception
@@ -35,6 +47,8 @@ class RecaptchaMethod extends AbstractMethod
                 );
             }
             $this->secretKey = $this->configuration['secretkey'];
+            $this->verificationUri = $this->configuration['verificationuri'];
+            $this->verificationResponseName = $this->configuration['verificationresponsename'];
         }
     }
 
@@ -80,7 +94,7 @@ class RecaptchaMethod extends AbstractMethod
      */
     protected function getSiteVerifyUri(): string
     {
-        return 'https://www.google.com/recaptcha/api/siteverify' .
+        return $this->verificationUri .
             '?secret=' . $this->secretKey . '&response=' . $this->getCaptchaResponse();
     }
 
@@ -89,7 +103,7 @@ class RecaptchaMethod extends AbstractMethod
      */
     protected function getCaptchaResponse(): string
     {
-        $response = GeneralUtility::_GP('g-recaptcha-response');
+        $response = GeneralUtility::_GP($this->verificationResponseName);
         if (!empty($response)) {
             return $response;
         }

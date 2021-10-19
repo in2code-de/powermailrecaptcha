@@ -1,5 +1,33 @@
+# Captcha provider :
+# recaptcha (default) - https://developers.google.com/recaptcha/docs/v3
+# hcaptcha - https://docs.hcaptcha.com/
+plugin.tx_powermailrecaptcha.provider =
+
 # cat=powermailrecaptcha//0010; type=text; label= Google Recaptcha Sitekey: Go to developers.google.com/recaptcha/ and register your domain. After that you can add your site key here.
-plugin.tx_powermailrecaptcha.sitekey = abcdef
+plugin.tx_powermailrecaptcha.sitekey =
 
 # cat=powermailrecaptcha//0020; type=text; label= Google Recaptcha Secretkey: Go to developers.google.com/recaptcha/ and register your domain. After that you can add your secret key here.
-plugin.tx_powermailrecaptcha.secretkey = abcdef
+plugin.tx_powermailrecaptcha.secretkey =
+
+plugin.tx_powermailrecaptcha {
+    recaptcha {
+        # Provider verification API URI
+        verificationuri = https://www.google.com/recaptcha/api/siteverify
+
+        # Provider verification response name
+        verificationresponsename = g-recaptcha-response
+
+        # Provider captcha API URI
+        javascript = https://www.google.com/recaptcha/api.js
+
+        # Provider captcha API class name
+        htmlclass = g-recaptcha
+    }
+
+    hcaptcha {
+        verificationuri = https://hcaptcha.com/siteverify
+        verificationresponsename = h-captcha-response
+        javascript = https://js.hcaptcha.com/1/api.js
+        htmlclass = h-captcha
+    }
+}

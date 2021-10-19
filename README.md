@@ -4,24 +4,22 @@
 
 ![Example form with a google recaptcha](Documentation/Images/frontend.png "Example form with a google recaptcha")
 
-
 ## Dependencies
 
 * powermail >= 8.0
 
-
 ## Installation
 
 - Just install this extension via composer `composer require in2code/powermailrecaptcha`
-- Register your domain to www.google.com/recaptcha/
+- Register your domain to your captcha provider. ([see Providers section](#Providers))
 - Add sitekey and secretkey to TypoScript Constants (see example below)
 - Ensure that spamshield is enabled (see below)
-- Add a field of Type Google Recaptcha to your powermail form
+- Add a field of Type Captcha to your powermail form
 - Have fun
 
-Example for TypoScript Constants:
+Example for TypoScript Constants : _(Google Recaptcha test key)_
 
-```
+```typo3_typoscript
 plugin.tx_powermailrecaptcha.sitekey = 6LdsBBUTAAAAAKMhI67inzeAvzBh5JdRRxlCwbTz
 plugin.tx_powermailrecaptcha.secretkey = 6LdsBBUTAAAAAKMhaaaainzeAvzBh5JdRRxlCwbyy
 ```
@@ -30,13 +28,13 @@ plugin.tx_powermailrecaptcha.secretkey = 6LdsBBUTAAAAAKMhaaaainzeAvzBh5JdRRxlCwb
 
 spamshield must be enabled in powermail (TypoScript setup):
 
-```
+```typo3_typoscript
 plugin.tx_powermail.settings.setup.spamshield._enable = 1
 ```
 
 Keep up to date if powermail recognize spam (TypoScript setup):
 
-```
+```typo3_typoscript
 # Get an email if spam was recognized
 plugin.tx_powermail.settings.setup.spamshield.email = spamreceiver@yourdomain.de
 
@@ -44,11 +42,53 @@ plugin.tx_powermail.settings.setup.spamshield.email = spamreceiver@yourdomain.de
 plugin.tx_powermail.settings.setup.spamshield.logfileLocation = typo3temp/logs/powermailSpam.log
 ```
 
+## Providers
+
+This extension can handle any Google Recaptcha based captcha APIs
+
+| Name                       | Typoscript constant  | Provider URL                            |
+| -------------------------- | -------------------- | --------------------------------------- |
+| Google Recaptcha (default) | recaptcha            | https://www.google.com/recaptcha/about/ |
+| hCaptcha                   | hcaptcha             | https://www.hcaptcha.com/               |
+
+### Adding a provider
+
+- add a provider in `ext_typoscript_constants.txt`
+
+```typo3_typoscript
+plugin.tx_powermailrecaptcha {
+    provider {
+        verificationuri = https://provider.com/siteverify
+        verificationresponsename = provider-captcha-response
+        javascript = https://provider.com/api.js
+        htmlclass = provider-captcha
+    }
+}
+```
+
+- add a condition in `ext_typoscript_setup.txt`
+
+```typo3_typoscript
+["{$plugin.tx_powermailrecaptcha.provider}" == "provider"]
+    plugin.tx_powermail.settings.setup {
+        captcha {
+            javascript = {$plugin.tx_powermailrecaptcha.provider.javascript}
+            htmlclass = {$plugin.tx_powermailrecaptcha.provider.htmlclass}
+        }
+
+        spamshield.methods.10.configuration {
+            verificationuri = {$plugin.tx_powermailrecaptcha.provider.verificationuri}
+            verificationresponsename = {$plugin.tx_powermailrecaptcha.provider.verificationresponsename}
+        }
+    }
+[END]
+```
 
 ## Changelog
 
 | Version    | Date       | Description                                                                                                  |
 | ---------- | ---------- | ------------------------------------------------------------------------------------------------------------ |
+| 5.0.4      | 2021-10-19 | Add Recaptcha based providers handling                                                                       |
 | 5.0.3      | 2021-09-25 | Fix typo in ter-release.yml file                                                                             |
 | 5.0.2      | 2021-09-09 | Add extension key to composer.json                                                                           |
 | 5.0.1      | 2020-12-03 | Add TYPO3 dependency to ext_emconf.php to make TER upload happy                                              |

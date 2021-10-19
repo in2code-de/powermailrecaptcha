@@ -1,19 +1,20 @@
 <div class="powermail_fieldwrap powermail_fieldwrap_type_recaptcha powermail_fieldwrap_{field.marker} {field.css} {settings.styles.framework.fieldAndLabelWrappingClasses}">
 	<label class="{settings.styles.framework.labelClasses}" title="{field.description}">
-		<vh:string.escapeLabels>{field.title}</vh:string.escapeLabels><span class="mandatory">*</span>
+		<vh:string.escapeLabels>{field.title}</vh:string.escapeLabels>
+		<span class="mandatory">*</span>
 	</label>
 
 	<div class="{settings.styles.framework.fieldWrappingClasses}">
-		<f:if condition="{settings.recaptcha.sitekey} != 'abcdef'">
+		<f:if condition="{settings.captcha.sitekey} != 'abcdef'">
 			<f:then>
-				<script src="//www.google.com/recaptcha/api.js" async defer></script>
-				<div class="g-recaptcha" data-sitekey="{settings.recaptcha.sitekey}"></div>
+				<script src="{settings.captcha.javascript}" async defer></script>
+				<div class="{settings.captcha.htmlclass}" data-sitekey="{settings.captcha.sitekey}"></div>
 			</f:then>
 			<f:else>
 				<p>
 					Please register your domain to
 					<a href="https://www.google.com/recaptcha/">https://www.google.com/recaptcha/</a>
-					and enter your sitekey in TypoScript Constants like<br />
+					and enter your sitekey in TypoScript Constants like<br/>
 					plugin.tx_powermailrecaptcha.sitekey = abcdef
 				</p>
 			</f:else>

@@ -4,10 +4,14 @@ plugin.tx_powermail {
 			10 = EXT:powermailrecaptcha/Resources/Private/Partials/
 		}
 	}
+
 	settings.setup {
-		recaptcha {
+		captcha {
 			sitekey = {$plugin.tx_powermailrecaptcha.sitekey}
+			javascript = {$plugin.tx_powermailrecaptcha.recaptcha.javascript}
+			htmlclass = {$plugin.tx_powermailrecaptcha.recaptcha.htmlclass}
 		}
+
 		spamshield.methods {
 			# Add recaptcha spamcheck
 			10 {
@@ -25,8 +29,27 @@ plugin.tx_powermail {
 				# method configuration
 				configuration {
 					secretkey = {$plugin.tx_powermailrecaptcha.secretkey}
+					verificationuri = {$plugin.tx_powermailrecaptcha.recaptcha.verificationuri}
+					verificationresponsename = {$plugin.tx_powermailrecaptcha.recaptcha.verificationresponsename}
 				}
 			}
 		}
 	}
+	_LOCAL_LANG.default.validationerror_spam_details = Please solve the Captcha.
+	_LOCAL_LANG.fr.validationerror_spam_details = Veuillez résoudre le Captcha SVP.
+	_LOCAL_LANG.de.validationerror_spam_details = Bitte lösen Sie das Captcha.
 }
+
+["{$plugin.tx_powermailrecaptcha.provider}" == "hcaptcha"]
+	plugin.tx_powermail.settings.setup {
+		captcha {
+			javascript = {$plugin.tx_powermailrecaptcha.hcaptcha.javascript}
+			htmlclass = {$plugin.tx_powermailrecaptcha.hcaptcha.htmlclass}
+		}
+
+		spamshield.methods.10.configuration {
+			verificationuri = {$plugin.tx_powermailrecaptcha.hcaptcha.verificationuri}
+			verificationresponsename = {$plugin.tx_powermailrecaptcha.hcaptcha.verificationresponsename}
+		}
+	}
+[END]
