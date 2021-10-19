@@ -1,7 +1,10 @@
 # powermailrecaptcha
 
-## Google recaptcha for TYPO3 powermail to prevent spam
+## Captcha field for TYPO3 powermail to prevent spam
 
+This extension adds Google Recaptcha or any Recaptcha based captcha provider field as a spamshield in TYPO3 Powermail
+
+Here's a exemple with Google Recaptcha
 ![Example form with a google recaptcha](Documentation/Images/frontend.png "Example form with a google recaptcha")
 
 ## Dependencies
@@ -46,14 +49,22 @@ plugin.tx_powermail.settings.setup.spamshield.logfileLocation = typo3temp/logs/p
 
 This extension can handle any Google Recaptcha based captcha APIs
 
-| Name                       | Typoscript constant  | Provider URL                            |
+| Name                       | Provider Name        | Provider URL                            |
 | -------------------------- | -------------------- | --------------------------------------- |
 | Google Recaptcha (default) | recaptcha            | https://www.google.com/recaptcha/about/ |
 | hCaptcha                   | hcaptcha             | https://www.hcaptcha.com/               |
 
+### Switching between providers
+
+If provider is empty it will take the default **recaptcha**
+
+```typo3_typoscript
+plugin.tx_powermailrecaptcha.provider = provider
+```
+
 ### Adding a provider
 
-- add a provider in `ext_typoscript_constants.txt`
+- add a provider in ext_typoscript_constants.txt
 
 ```typo3_typoscript
 plugin.tx_powermailrecaptcha {
@@ -66,7 +77,7 @@ plugin.tx_powermailrecaptcha {
 }
 ```
 
-- add a condition in `ext_typoscript_setup.txt`
+- add a condition in ext_typoscript_setup.txt
 
 ```typo3_typoscript
 ["{$plugin.tx_powermailrecaptcha.provider}" == "provider"]
