@@ -7,8 +7,8 @@
 
 ## Dependencies
 
-* powermail >= 8.0
-* TYPO3 Version >= 10
+* powermail 8.x, 9.x, 10.x
+* TYPO3 Version 10 & 11
 * Google recaptcha V2 (https://developers.google.com/recaptcha/docs/v2)
 
 ## Installation
@@ -50,7 +50,7 @@ plugin.tx_powermail.settings.setup.spamshield.logfileLocation = typo3temp/logs/p
 
 | Version | Date       | Description                                                                                         |
 |---------|------------|-----------------------------------------------------------------------------------------------------|
-| 5.1.0   | 2022-01-19 | Support for TYPO3 11Fix typo in ter-release.yml file                                                |
+| 5.1.0   | 2023-05-13 | Support for TYPO3 11 / Fix typo in ter-release.yml file                                             |
 | 5.0.3   | 2021-09-25 | Fix typo in ter-release.yml file                                                                    |
 | 5.0.2   | 2021-09-09 | Add extension key to composer.json                                                                  |
 | 5.0.1   | 2020-12-03 | Add TYPO3 dependency to ext_emconf.php to make TER upload happy                                     |
