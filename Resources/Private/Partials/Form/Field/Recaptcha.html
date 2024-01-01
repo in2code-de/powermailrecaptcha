@@ -1,13 +1,11 @@
 <div class="powermail_fieldwrap powermail_fieldwrap_type_recaptcha powermail_fieldwrap_{field.marker} {field.css} {settings.styles.framework.fieldAndLabelWrappingClasses}">
-	<label class="{settings.styles.framework.labelClasses}" title="{field.description}">
-		<vh:string.escapeLabels>{field.title}</vh:string.escapeLabels><span class="mandatory">*</span>
-	</label>
+	<f:render partial="Form/FieldLabel" arguments="{_all}" />
 
 	<div class="{settings.styles.framework.fieldWrappingClasses}">
 		<f:if condition="{settings.recaptcha.sitekey} != 'abcdef'">
 			<f:then>
 				<script src="//www.google.com/recaptcha/api.js" async defer></script>
-				<div class="g-recaptcha" data-sitekey="{settings.recaptcha.sitekey}"></div>
+				<div id="powermail_field_{field.marker}" class="g-recaptcha" data-sitekey="{settings.recaptcha.sitekey}"></div>
 			</f:then>
 			<f:else>
 				<p>
