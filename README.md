@@ -63,3 +63,12 @@ plugin.tx_powermail.settings.setup.spamshield.logfileLocation = typo3temp/logs/p
 | 1.1.0   | 2017-11-04 | Update dependencies for powermail 4.x                                                               |
 | 1.0.1   | 2016-08-06 | Activate check only if form has a recaptcha field and not every time, some more stuff in the manual |
 | 1.0.0   | 2016-08-06 | Initial upload - have fun                                                                           |
+
+# Development
+
+Environment is included. Set it up via:
+* DDEV start
+* Composer install
+* ddev import-db .project/db.sql.gz
+
+Made for TYPO3 12 / powermail 12

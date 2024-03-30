@@ -22,6 +22,26 @@
 		"in2code/powermail": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0",
 		"ext-json": "*"
 	},
+	"require-dev": {
+		"in2code/powermail": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0",
+		"ext-json": "*",
+		"typo3/cms-extbase": "^12",
+		"typo3/cms-extensionmanager": "^12",
+		"typo3/cms-felogin": "^12",
+		"typo3/cms-filelist": "^12",
+		"typo3/cms-fluid-styled-content": "^12",
+		"typo3/cms-frontend": "^12",
+		"typo3/cms-info": "^12",
+		"typo3/cms-install": "^12",
+		"typo3/cms-recordlist": "^12",
+		"typo3/cms-rte-ckeditor": "^12",
+		"typo3/cms-scheduler": "^12",
+		"typo3/cms-setup": "^12",
+		"typo3/cms-t3editor": "^12",
+		"typo3/cms-tstemplate": "^12",
+		"typo3/cms-lowlevel": "^12",
+		"helhum/typo3-console": "^8"
+	},
 	"replace": {
 		"typo3-ter/powermailrecaptcha": "self.version"
 	},
@@ -32,7 +52,23 @@
 	},
 	"extra": {
 		"typo3/cms": {
-			"extension-key": "powermailrecaptcha"
+			"cms-package-dir": "{$vendor-dir}/typo3/cms",
+			"web-dir": ".build/web",
+			"extension-key": "powermailrecaptcha",
+			"ignore-as-root": false
 		}
+	},
+	"config": {
+		"vendor-dir": ".build/vendor",
+		"bin-dir": ".build/bin",
+		"allow-plugins": {
+			"typo3/class-alias-loader": true,
+			"typo3/cms-composer-installers": true
+		}
+	},
+	"scripts": {
+		"package-states": [
+			".build/bin/typo3cms install:fixfolderstructure"
+		]
 	}
 }
