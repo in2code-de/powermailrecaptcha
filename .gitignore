@@ -14,3 +14,5 @@ node_modules/
 .sass-cache/
 npm-debug.log
 dynamicReturnTypeMeta.json
+.build
+var

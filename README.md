@@ -7,8 +7,8 @@
 
 ## Dependencies
 
-* powermail 8.x, 9.x, 10.x
-* TYPO3 Version 10 & 11
+* powermail 8.x, 9.x, 10.x, 11.x, 12.x
+* TYPO3 Version 10, 11 & 12
 * Google recaptcha V2 (https://developers.google.com/recaptcha/docs/v2)
 
 ## Installation
@@ -50,6 +50,8 @@ plugin.tx_powermail.settings.setup.spamshield.logfileLocation = typo3temp/logs/p
 
 | Version | Date       | Description                                                                                         |
 |---------|------------|-----------------------------------------------------------------------------------------------------|
+| 5.2.1   | 2024-03-30 | Support for Powermail 12                                                                            |
+| 5.2.0   | 2023-12-31 | Support for TYPO3 12                                                                                |
 | 5.1.0   | 2023-05-13 | Support for TYPO3 11 / Fix typo in ter-release.yml file                                             |
 | 5.0.3   | 2021-09-25 | Fix typo in ter-release.yml file                                                                    |
 | 5.0.2   | 2021-09-09 | Add extension key to composer.json                                                                  |
@@ -61,3 +63,12 @@ plugin.tx_powermail.settings.setup.spamshield.logfileLocation = typo3temp/logs/p
 | 1.1.0   | 2017-11-04 | Update dependencies for powermail 4.x                                                               |
 | 1.0.1   | 2016-08-06 | Activate check only if form has a recaptcha field and not every time, some more stuff in the manual |
 | 1.0.0   | 2016-08-06 | Initial upload - have fun                                                                           |
+
+# Development
+
+Environment is included. Set it up via:
+* DDEV start
+* Composer install
+* ddev import-db .project/db.sql.gz
+
+Made for TYPO3 12 / powermail 12
