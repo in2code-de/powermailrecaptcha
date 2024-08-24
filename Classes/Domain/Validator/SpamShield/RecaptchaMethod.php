@@ -107,7 +107,8 @@ class RecaptchaMethod extends AbstractMethod
     {
         if (property_exists($this, 'flexForm')) {
             $confirmationActive = $this->flexForm['settings']['flexform']['main']['confirmation'] === '1';
-            return $this->getActionName() === 'create' && $confirmationActive;
+            $action = $this->getActionName();
+            return ($action === 'create' || $action === 'checkCreate') && $confirmationActive;
         }
         return false;
     }
