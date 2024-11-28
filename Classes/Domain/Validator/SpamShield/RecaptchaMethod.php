@@ -106,9 +106,15 @@ class RecaptchaMethod extends AbstractMethod
     protected function isCaptchaCheckToSkip(): bool
     {
         if (property_exists($this, 'flexForm')) {
-            $confirmationActive = $this->flexForm['settings']['flexform']['main']['confirmation'] === '1';
             $action = $this->getActionName();
-            return ($action === 'create' || $action === 'checkCreate') && $confirmationActive;
+            $confirmationActive = $this->flexForm['settings']['flexform']['main']['confirmation'] === '1';
+            $optinActive = $this->flexForm['settings']['flexform']['main']['optin'] === '1';
+            if ($action === 'create' && $confirmationActive || $action === 'checkCreate' && $confirmationActive) {
+                return true;
+            }
+            if ($action === 'optinConfirm' && $optinActive) {
+                return true;
+            }
         }
         return false;
     }
