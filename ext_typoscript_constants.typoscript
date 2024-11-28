@@ -3,3 +3,6 @@ plugin.tx_powermailrecaptcha.sitekey = abcdef
 
 # cat=powermailrecaptcha//0020; type=text; label= Google Recaptcha Secretkey: Go to developers.google.com/recaptcha/ and register your domain. After that you can add your secret key here.
 plugin.tx_powermailrecaptcha.secretkey = abcdef
+
+# cat=powermailrecaptcha//0030; type=text; label= Google Recaptcha Language: Change the ISO code here to load Recaptcha in a different language. (Recommended to dynamically adjust this via TypoScript)
+plugin.tx_powermailrecaptcha.language = en

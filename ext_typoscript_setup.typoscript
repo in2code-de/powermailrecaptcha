@@ -7,6 +7,7 @@ plugin.tx_powermail {
 	settings.setup {
 		recaptcha {
 			sitekey = {$plugin.tx_powermailrecaptcha.sitekey}
+			language = {$plugin.tx_powermailrecaptcha.language}
 		}
 		spamshield.methods {
 			# Add recaptcha spamcheck
