@@ -6,8 +6,8 @@ use In2code\Powermail\Domain\Model\Field;
 use In2code\Powermail\Domain\Validator\SpamShield\AbstractMethod;
 use TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationExtensionNotConfiguredException;
 use TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationPathDoesNotExistException;
+use TYPO3\CMS\Core\Utility\ArrayUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\Exception;
 
 /**
  * Class RecaptchaMethod
@@ -61,7 +61,6 @@ class RecaptchaMethod extends AbstractMethod
      *
      * @throws ExtensionConfigurationExtensionNotConfiguredException
      * @throws ExtensionConfigurationPathDoesNotExistException
-     * @throws Exception
      */
     protected function isFormWithRecaptchaField(): bool
     {
@@ -124,7 +123,9 @@ class RecaptchaMethod extends AbstractMethod
      */
     protected function getActionName(): string
     {
-        $pluginVariables = GeneralUtility::_GPmerged('tx_powermail_pi1');
+        $request = $GLOBALS['TYPO3_REQUEST'];
+        $pluginVariables = $request->getQueryParams()['tx_powermail_pi1'];
+        ArrayUtility::mergeRecursiveWithOverrule($pluginVariables, $request->getParsedBody()['tx_powermail_pi1']);
         return $pluginVariables['action'];
     }
 }
