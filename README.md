@@ -52,11 +52,14 @@ plugin.tx_powermail.settings.setup.spamshield.logfileLocation = typo3temp/logs/p
 > [EAP page (EN)](https://www.in2code.de/en/agency/typo3-extensions/early-access-program/) for more information how
 > to get access to a TYPO3 13 version
 
-## Changelog
+## Releases
+
+Detailed [changlog](Documentation/changlog.md) (since version 5.2.3)
 
 | Version | Date       | Description                                                                                         |
 |---------|------------|-----------------------------------------------------------------------------------------------------|
-| 13.0.0   | tbd       | TYPO3 v13 compatibility - planned                                                                   |
+| 13.0.0  | 2024-12-11 | TYPO3 v13 compatibility - available via EAP. Public release will be in July 2025                    |
+| 5.2.3   | 2024-12-11 | Maintenance Release                                                                                 |
 | 5.2.2   | 2024-08-25 | Bugfix to add valid actions - thx to speters                                                        |
 | 5.2.1   | 2024-03-30 | Support for Powermail 12                                                                            |
 | 5.2.0   | 2023-12-31 | Support for TYPO3 12                                                                                |
@@ -80,3 +83,7 @@ Environment is included. Set it up via:
 * ddev import-db .project/db.sql.gz
 
 Made for TYPO3 12 / powermail 12
+
+## Branches
+
+"Master " branch is used for development. Releases are tagged within the master branch

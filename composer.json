@@ -14,6 +14,12 @@
 			"email": "alexander.kellner@in2code.de",
 			"role": "Technical owner",
 			"homepage": "https://www.in2code.de"
+		},
+		{
+			"name": "Andreas Nedbal",
+			"email": "andreas.nedbal@in2code.de",
+			"role": "Developer",
+			"homepage": "https://www.in2code.de"
 		}
 	],
 	"type": "typo3-cms-extension",
