@@ -16,5 +16,10 @@ $EM_CONF[$_EXTKEY] = [
         ],
         'conflicts' => [],
         'suggests' => [],
+    ],
+    'autoload' => [
+        'psr-4' => [
+            'In2code\\Powermailrecaptcha\\' => 'Classes',
+        ]
     ]
 ];
