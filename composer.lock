@@ -1074,12 +1074,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:in2code-pro/powermail.git",
-                "reference": "513426201a0cad4afae9e826719b179a3a9061a0"
+                "reference": "fb0d91571076230afe5f21ffed754dcbd2d1385c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/in2code-pro/powermail/zipball/513426201a0cad4afae9e826719b179a3a9061a0",
-                "reference": "513426201a0cad4afae9e826719b179a3a9061a0",
+                "url": "https://api.github.com/repos/in2code-pro/powermail/zipball/fb0d91571076230afe5f21ffed754dcbd2d1385c",
+                "reference": "fb0d91571076230afe5f21ffed754dcbd2d1385c",
                 "shasum": ""
             },
             "require": {
@@ -1225,7 +1225,7 @@
                 "source": "https://github.com/in2code-pro/powermail/tree/master",
                 "issues": "https://github.com/in2code-pro/powermail/issues"
             },
-            "time": "2024-11-22T16:06:06+00:00"
+            "time": "2025-02-27T15:13:48+00:00"
         },
         {
             "name": "lolli42/finediff",
