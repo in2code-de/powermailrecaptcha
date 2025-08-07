@@ -6,8 +6,8 @@ use In2code\Powermail\Domain\Model\Field;
 use In2code\Powermail\Domain\Validator\SpamShield\AbstractMethod;
 use TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationExtensionNotConfiguredException;
 use TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationPathDoesNotExistException;
+use TYPO3\CMS\Core\Utility\ArrayUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\Exception;
 
 /**
  * Class RecaptchaMethod
@@ -22,7 +22,6 @@ class RecaptchaMethod extends AbstractMethod
     /**
      * Check if secret key is given and set it
      *
-     * @return void
      * @throws \Exception
      */
     public function initialize(): void
@@ -34,6 +33,7 @@ class RecaptchaMethod extends AbstractMethod
                     1607012762
                 );
             }
+
             $this->secretKey = $this->configuration['secretkey'];
         }
     }
@@ -46,21 +46,21 @@ class RecaptchaMethod extends AbstractMethod
         if (!$this->isFormWithRecaptchaField() || $this->isCaptchaCheckToSkip()) {
             return false;
         }
+
         if ($this->getCaptchaResponse() !== '') {
             $jsonResult = GeneralUtility::getUrl($this->getSiteVerifyUri());
             $result = json_decode($jsonResult);
             return !$result->success;
         }
+
         return true;
     }
 
     /**
      * Check if current form has a recaptcha field
      *
-     * @return bool
      * @throws ExtensionConfigurationExtensionNotConfiguredException
      * @throws ExtensionConfigurationPathDoesNotExistException
-     * @throws Exception
      */
     protected function isFormWithRecaptchaField(): bool
     {
@@ -72,12 +72,10 @@ class RecaptchaMethod extends AbstractMethod
                 }
             }
         }
+
         return false;
     }
 
-    /**
-     * @return string
-     */
     protected function getSiteVerifyUri(): string
     {
         return 'https://www.google.com/recaptcha/api/siteverify' .
@@ -89,10 +87,11 @@ class RecaptchaMethod extends AbstractMethod
      */
     protected function getCaptchaResponse(): string
     {
-        $response = GeneralUtility::_GP('g-recaptcha-response');
+        $response = $GLOBALS['TYPO3_REQUEST']->getParsedBody()['g-recaptcha-response'] ?? $GLOBALS['TYPO3_REQUEST']->getQueryParams()['g-recaptcha-response'] ?? null;
         if (!empty($response)) {
             return $response;
         }
+
         return '';
     }
 
@@ -100,8 +99,6 @@ class RecaptchaMethod extends AbstractMethod
      * Captcha check should be skipped on createAction if there was a confirmationAction where the captcha was
      * already checked before
      * Note: $this->flexForm is only available in powermail 3.9 or newer
-     *
-     * @return bool
      */
     protected function isCaptchaCheckToSkip(): bool
     {
@@ -112,10 +109,12 @@ class RecaptchaMethod extends AbstractMethod
             if ($action === 'create' && $confirmationActive || $action === 'checkCreate' && $confirmationActive) {
                 return true;
             }
+
             if ($action === 'optinConfirm' && $optinActive) {
                 return true;
             }
         }
+
         return false;
     }
 
@@ -124,7 +123,9 @@ class RecaptchaMethod extends AbstractMethod
      */
     protected function getActionName(): string
     {
-        $pluginVariables = GeneralUtility::_GPmerged('tx_powermail_pi1');
+        $request = $GLOBALS['TYPO3_REQUEST'];
+        $pluginVariables = $request->getQueryParams()['tx_powermail_pi1'];
+        ArrayUtility::mergeRecursiveWithOverrule($pluginVariables, $request->getParsedBody()['tx_powermail_pi1']);
         return $pluginVariables['action'];
     }
 }

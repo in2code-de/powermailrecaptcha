@@ -24,29 +24,34 @@
 	],
 	"type": "typo3-cms-extension",
 	"license": "GPL-2.0-or-later",
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/in2code-pro/powermail.git"
+		}
+	],
 	"require": {
-		"in2code/powermail": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0",
+		"in2code/powermail": "dev-master",
 		"ext-json": "*"
 	},
 	"require-dev": {
-		"in2code/powermail": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0",
 		"ext-json": "*",
-		"typo3/cms-extbase": "^12",
-		"typo3/cms-extensionmanager": "^12",
-		"typo3/cms-felogin": "^12",
-		"typo3/cms-filelist": "^12",
-		"typo3/cms-fluid-styled-content": "^12",
-		"typo3/cms-frontend": "^12",
-		"typo3/cms-info": "^12",
-		"typo3/cms-install": "^12",
-		"typo3/cms-recordlist": "^12",
-		"typo3/cms-rte-ckeditor": "^12",
-		"typo3/cms-scheduler": "^12",
-		"typo3/cms-setup": "^12",
-		"typo3/cms-t3editor": "^12",
-		"typo3/cms-tstemplate": "^12",
-		"typo3/cms-lowlevel": "^12",
-		"helhum/typo3-console": "^8"
+		"typo3/cms-extbase": "^13",
+		"typo3/cms-extensionmanager": "^13",
+		"typo3/cms-felogin": "^13",
+		"typo3/cms-filelist": "^13",
+		"typo3/cms-fluid-styled-content": "^13",
+		"typo3/cms-frontend": "^13",
+		"typo3/cms-info": "^13",
+		"typo3/cms-recordlist": "^13",
+		"typo3/cms-rte-ckeditor": "^13",
+		"typo3/cms-scheduler": "^13",
+		"typo3/cms-setup": "^13",
+		"typo3/cms-t3editor": "^13",
+		"typo3/cms-tstemplate": "^13",
+		"typo3/cms-lowlevel": "^13",
+		"typo3/cms-install": "^13.4",
+		"helhum/typo3-console": "^8.2"
 	},
 	"replace": {
 		"typo3-ter/powermailrecaptcha": "self.version"
