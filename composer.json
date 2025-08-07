@@ -31,7 +31,7 @@
 		}
 	],
 	"require": {
-		"in2code/powermail": "dev-master",
+		"in2code/powermail": "^13",
 		"ext-json": "*"
 	},
 	"require-dev": {
