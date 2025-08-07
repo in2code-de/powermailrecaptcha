@@ -24,12 +24,6 @@
 	],
 	"type": "typo3-cms-extension",
 	"license": "GPL-2.0-or-later",
-	"repositories": [
-		{
-			"type": "vcs",
-			"url": "https://github.com/in2code-pro/powermail.git"
-		}
-	],
 	"require": {
 		"in2code/powermail": "^13",
 		"ext-json": "*"

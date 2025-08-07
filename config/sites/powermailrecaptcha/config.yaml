@@ -1,4 +1,4 @@
-base: 'https://powermailrecaptcha5.ddev.site/'
+base: 'https://powermailrecaptcha.ddev.site/'
 languages:
   -
     title: English
