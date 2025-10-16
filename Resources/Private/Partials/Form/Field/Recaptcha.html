@@ -4,7 +4,7 @@
 	<div class="{settings.styles.framework.fieldWrappingClasses}">
 		<f:if condition="{settings.recaptcha.sitekey} != 'abcdef'">
 			<f:then>
-				<script src="//www.google.com/recaptcha/api.js" async defer></script>
+				<script src="//www.google.com/recaptcha/api.js?hl={settings.recaptcha.language}" async defer></script>
 				<div id="powermail_field_{field.marker}" class="g-recaptcha" data-sitekey="{settings.recaptcha.sitekey}"></div>
 			</f:then>
 			<f:else>
