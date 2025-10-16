@@ -7,8 +7,8 @@
 
 ## Dependencies
 
-* powermail 8.x, 9.x, 10.x
-* TYPO3 Version 10 & 11
+* powermail 8.x, 9.x, 10.x, 11.x, 12.x, 13.x
+* TYPO3 Version 10, 11 & 12, 13
 * Google recaptcha V2 (https://developers.google.com/recaptcha/docs/v2)
 
 ## Installation
@@ -46,11 +46,24 @@ plugin.tx_powermail.settings.setup.spamshield.email = spamreceiver@yourdomain.de
 plugin.tx_powermail.settings.setup.spamshield.logfileLocation = typo3temp/logs/powermailSpam.log
 ```
 
+## Early Access Programm for TYPO3 14 support
 
-## Changelog
+:information_source: **TYPO3 14 compatibility**
+> See [EAP page (DE)](https://www.in2code.de/agentur/typo3-extensions/early-access-programm/) or
+> [EAP page (EN)](https://www.in2code.de/en/agency/typo3-extensions/early-access-program/) for more information how
+> to get access to a TYPO3 14 version
+
+## Releases
+
+Detailed [changlog](Documentation/changlog.md) (since version 5.2.3)
 
 | Version | Date       | Description                                                                                         |
 |---------|------------|-----------------------------------------------------------------------------------------------------|
+| 13.0.0  | 2024-12-11 | TYPO3 v13 compatibility                                                                             |
+| 5.2.3   | 2024-12-11 | Maintenance Release                                                                                 |
+| 5.2.2   | 2024-08-25 | Bugfix to add valid actions - thx to speters                                                        |
+| 5.2.1   | 2024-03-30 | Support for Powermail 12                                                                            |
+| 5.2.0   | 2023-12-31 | Support for TYPO3 12                                                                                |
 | 5.1.0   | 2023-05-13 | Support for TYPO3 11 / Fix typo in ter-release.yml file                                             |
 | 5.0.3   | 2021-09-25 | Fix typo in ter-release.yml file                                                                    |
 | 5.0.2   | 2021-09-09 | Add extension key to composer.json                                                                  |
@@ -62,3 +75,16 @@ plugin.tx_powermail.settings.setup.spamshield.logfileLocation = typo3temp/logs/p
 | 1.1.0   | 2017-11-04 | Update dependencies for powermail 4.x                                                               |
 | 1.0.1   | 2016-08-06 | Activate check only if form has a recaptcha field and not every time, some more stuff in the manual |
 | 1.0.0   | 2016-08-06 | Initial upload - have fun                                                                           |
+
+# Development
+
+Environment is included. Set it up via:
+* DDEV start
+* Composer install
+* ddev import-db .project/db.sql.gz
+
+Made for TYPO3 13 / powermail 13
+
+## Branches
+
+"Master " branch is used for development. Releases are tagged within the master branch
