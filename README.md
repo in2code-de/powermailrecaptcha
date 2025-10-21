@@ -15,7 +15,6 @@
 
 - Just install this extension via composer `composer require in2code/powermailrecaptcha`
 - Register your domain to www.google.com/recaptcha/ (registration direct link: https://g.co/recaptcha/v3 - reCAPTCHA, Version 2)
-- Include "Google recaptcha for powermail" static template in your main template record 
 - Add sitekey and secretkey to TypoScript Constants (see example below)
 - Ensure that spamshield is enabled (see below)
 - Add a field of Type Google Recaptcha to your powermail form
