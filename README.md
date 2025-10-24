@@ -80,7 +80,7 @@ Detailed [changlog](Documentation/changlog.md) (since version 5.2.3)
 Environment is included. Set it up via:
 * DDEV start
 * Composer install
-* ddev import-db .project/db.sql.gz
+* ddev import-db --file=.project/db.sql.gz
 
 Made for TYPO3 13 / powermail 13
 
