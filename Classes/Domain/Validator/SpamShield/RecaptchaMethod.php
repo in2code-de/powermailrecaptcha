@@ -125,7 +125,7 @@ class RecaptchaMethod extends AbstractMethod
     {
         $request = $GLOBALS['TYPO3_REQUEST'];
         $pluginVariables = $request->getQueryParams()['tx_powermail_pi1'];
-        ArrayUtility::mergeRecursiveWithOverrule($pluginVariables, $request->getParsedBody()['tx_powermail_pi1']);
+        ArrayUtility::mergeRecursiveWithOverrule($pluginVariables, $request->getParsedBody()['tx_powermail_pi1'] ?? []);
         return $pluginVariables['action'];
     }
 }
