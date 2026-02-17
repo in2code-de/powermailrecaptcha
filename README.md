@@ -84,6 +84,9 @@ Environment is included. Set it up via:
 
 Made for TYPO3 13 / powermail 13
 
+API Key V2 for local testing:
+https://gist.github.com/MehulBawadia/b6c78b4f10d872616b6a4ab458b86863
+
 ## Branches
 
 "Master " branch is used for development. Releases are tagged within the master branch
