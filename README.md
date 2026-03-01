@@ -8,7 +8,7 @@
 ## Dependencies
 
 * powermail 8.x, 9.x, 10.x, 11.x, 12.x, 13.x
-* TYPO3 Version 10, 11 & 12, 13
+* TYPO3 Version 13
 * Google recaptcha V2 (https://developers.google.com/recaptcha/docs/v2)
 
 ## Installation
@@ -16,7 +16,7 @@
 - Just install this extension via composer `composer require in2code/powermailrecaptcha`
 - Register your domain to www.google.com/recaptcha/ (registration direct link: https://g.co/recaptcha/v3 - reCAPTCHA, Version 2)
 - Add sitekey and secretkey to TypoScript Constants (see example below)
-- Ensure that spamshield is enabled (see below)
+- Ensure that spamshield is enabled (see below) and make it mandatory
 - Add a field of Type Google Recaptcha to your powermail form
 - Have fun
 
@@ -58,6 +58,7 @@ Detailed [changlog](Documentation/changlog.md) (since version 5.2.3)
 
 | Version | Date       | Description                                                                                         |
 |---------|------------|-----------------------------------------------------------------------------------------------------|
+| 13.1.0  | 2026-03-01 | add recaptcha validator (TYPO3 13 only)                                                             |
 | 13.0.0  | 2024-12-11 | TYPO3 v13 compatibility                                                                             |
 | 5.2.3   | 2024-12-11 | Maintenance Release                                                                                 |
 | 5.2.2   | 2024-08-25 | Bugfix to add valid actions - thx to speters                                                        |
