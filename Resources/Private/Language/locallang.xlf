@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:powermailrecaptcha/Resources/Private/Language/locallang.xlf" date="2025-10-01T12:00:00Z" product-name="powermailrecaptcha">
+		<header/>
+		<body>
+            <trans-unit id="captchaError" resname="captchaError">
+                <source>Please click the Captcha element at the bottom of the form and submit the form again</source>
+            </trans-unit>
+		</body>
+	</file>
+</xliff>
