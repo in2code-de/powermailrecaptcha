@@ -148,8 +148,8 @@ class RecaptchaValidator extends AbstractValidator
      */
     protected function getActionName(): string
     {
-        $pluginVariables = $this->request->getQueryParams()['tx_powermail_pi1'];
-        ArrayUtility::mergeRecursiveWithOverrule($pluginVariables, $this->request->getParsedBody()['tx_powermail_pi1']);
+        $pluginVariables = (array) ($this->request->getQueryParams()['tx_powermail_pi1'] ?? []);
+        ArrayUtility::mergeRecursiveWithOverrule($pluginVariables, (array) ($this->request->getParsedBody()['tx_powermail_pi1'] ?? []));
         return $pluginVariables['action'];
     }
 }
