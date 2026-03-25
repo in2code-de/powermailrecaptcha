@@ -7,7 +7,7 @@
 		"captcha",
 		"recaptcha"
 	],
-	"homepage": "https://github.com/einpraegsam/powermailrecaptcha",
+	"homepage": "https://github.com/in2code-de/powermailrecaptcha",
 	"authors": [
 		{
 			"name": "Alex Kellner",
@@ -25,7 +25,7 @@
 	"type": "typo3-cms-extension",
 	"license": "GPL-2.0-or-later",
 	"require": {
-		"in2code/powermail": "^13",
+		"in2code/powermail": "^13.0 || @dev",
 		"ext-json": "*"
 	},
 	"require-dev": {
