@@ -1,6 +1,3 @@
-page.includeJSFooter.powermailrecaptcha = EXT:powermailrecaptcha/Resources/Public/JavaScript/captchaValidation.js
-page.includeJSFooter.powermailrecaptcha.defer = 1
-
 plugin.tx_powermail {
     view {
         partialRootPaths {
