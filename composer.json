@@ -63,6 +63,16 @@
 			"ignore-as-root": false
 		}
 	},
+	"funding": [
+		{
+			"type": "other",
+			"url": "https://www.in2code.de/supportopensource"
+		},
+		{
+			"type": "github",
+			"url": "https://github.com/orgs/in2code-de/sponsoring"
+		}
+	],
 	"config": {
 		"vendor-dir": ".build/vendor",
 		"bin-dir": ".build/bin",
