@@ -58,6 +58,7 @@ Detailed [changlog](Documentation/changlog.md) (since version 5.2.3)
 
 | Version | Date       | Description                                                                                         |
 |---------|------------|-----------------------------------------------------------------------------------------------------|
+| 13.1.1  | 2026-05-29 | Bugfix Release                                                                                      |
 | 13.1.0  | 2026-03-01 | add recaptcha validator (TYPO3 13 only)                                                             |
 | 13.0.0  | 2024-12-11 | TYPO3 v13 compatibility                                                                             |
 | 5.2.3   | 2024-12-11 | Maintenance Release                                                                                 |
